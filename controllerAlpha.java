@@ -46,7 +46,10 @@ public class controllerAlpha
             assert delete !=null : "Problems";
             assert deck !=null : "Problems";
             //assert addToDeck !=null : "Problems";
-            
+            System.out.println("Populating scene with items from the database...");
+            @SuppressWarnings("unchecked")
+            List<pokemon> targetList = list.getItems();
+            pokemon.readAll(targetList);
         }
         catch (AssertionError ae)
         {
@@ -70,22 +73,23 @@ public class controllerAlpha
     
     @FXML   void delClick()
     {
-        System.out.println("Yes was clicked!");
+        System.out.println("Delete was clicked!");
     }
     
     @FXML   void deckMk()
     {
-        System.out.println("Test");
+        System.out.println("Make a deck!");
     }
     
     @FXML   void listClick()
     {
-        System.out.println("No was clicked!");
+        name.setText("a");
+        System.out.println("List was clicked!");
     }
     
     @FXML   void searchThis()
     {
-        System.out.println("Exit was clicked!");
-        index.kill();        // Call the terminate method in the main Application class.
+        
+        System.out.println(search.getText());
     }
 }
